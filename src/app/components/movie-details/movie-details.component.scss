@@ -1,0 +1,80 @@
+#movie {
+  padding: 3rem;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  overflow: auto;
+  height: 100vh;
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: #353750;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(#5B6EF1, #54FACC, #5B6EF1);
+  }
+}
+
+#poster {
+  max-width: 500px;
+  margin-right: 2rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+#rating {
+  font-size: 1.2rem;
+  span {
+    color: #54FACC;
+  }
+}
+
+#details {
+  max-width: 550px;
+  margin-bottom: 6rem;
+  #overview, #credits, #reviews {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+#load-more-btn {
+  margin-bottom: 6rem;
+  padding: 1rem 4rem;
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5B6EF1;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.cast {
+  margin-right: 1rem;
+}
+
+.review {
+  padding: .8rem;
+  margin-bottom: 1rem;
+  background: #4B4D5C;
+  font-size: 1rem;
+
+  .author {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h3 {
+  color: #54FACC;
+}

@@ -1,0 +1,22 @@
+<div id="search">
+  <div class="input-box">
+    <input class="search-input"
+           type="text"
+           [(ngModel)]="searchValue"
+           (keyup.enter)="searchMovies($event)"
+           placeholder="Searc by name">
+    <div class="search-btn" (click)="searchMovies($event)">
+      <span>🔎</span>
+    </div>
+  </div>
+</div>
+<div id="movie-list">
+  <div id="movie-list__items">
+    <app-movie-list-item *ngFor="let movie of movies$ | async" [movie]="movie" (click)="loadDetails(movie.id)"></app-movie-list-item>
+  </div>
+  <div id="load-more-btn" (click)="loadMore()">
+    <a>Load more movie...</a>
+  </div>
+</div>
+
+

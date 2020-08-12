@@ -2,7 +2,11 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import api_key from 'api_key';
+
 export const environment = {
+  baseUrl: 'https://api.themoviedb.org/3/',
+  api_key: api_key,
   production: false
 };
 

@@ -1,0 +1,42 @@
+<div id="movie" *ngIf="selectedMovie$ | async as selected">
+  <div id="poster" *ngIf="selected.movie.poster_path">
+    <img src="https://image.tmdb.org/t/p/w500/{{selected.movie.poster_path}}" alt="">
+  </div>
+  <div id="details">
+    <h1 id="title">
+      {{ selected.movie.title }}
+    </h1>
+    <p id="rating">
+      <span>Rating: </span>{{ selected.movie.vote_average }}
+    </p>
+    <div id="overview">
+      <h3>Overview:</h3>
+      <p *ngIf="selected.movie.overview; else elseBlock">
+        {{ selected.movie.overview }}
+      </p>
+      <p>
+
+      </p>
+    </div>
+    <div id="credits">
+      <h3>Cast: </h3>
+      <p *ngIf="selected.credit.cast; else elseBlock">
+        <span class="cast" *ngFor="let cast of selected.credit.cast">{{ cast.name }}, </span>
+      </p>
+    </div>
+    <div id="reviews">
+      <h3>Reviews</h3>
+      <ng-container *ngIf="selected.reviews.results.length; else elseBlock">
+        <div class="review" *ngFor="let review of selected.reviews.results">
+          <span class="author">{{ review.author }}</span>
+          <p class="review-content">{{ review.content }}</p>
+        </div>
+        <div id="load-more-btn" *ngIf="selected.reviews.results.length < selected.reviews.total_results">
+          <a>Load more review...</a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #elseBlock>No data.</ng-template>

@@ -1,0 +1,8 @@
+<div class="movie">
+  <div class="poster">
+    <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}" >
+  </div>
+  <div class="title">
+    {{ movie.title }}
+  </div>
+</div>
